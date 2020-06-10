@@ -17,11 +17,15 @@ class Form extends Component {
     let val = event.target.value;
     let err = '';
     if (nam === "roll_no") {
-    if (val !="" && !Number(val)) {
-    err = <strong>Your roll_no must be a number</strong>;
+      if (val !== "" && !Number(val)) {
+        err = <strong>Your roll_no must be a number</strong>;
+      }
     }
-    }
-    this.setState({errormessage: err}
+    this.setState({errorMessage: err})
+    this.setState({[nam]: val})
+}
+
+
 
   render() {
     return (
